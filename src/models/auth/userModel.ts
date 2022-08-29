@@ -24,12 +24,12 @@ const UserSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       required: true,
       ref: "Role",
-      default: "61cbc5391efe64b6e77f4661",
+      default: "62fcbf1d8713bdad3fa19e5e",
     },
     role: {
       type: String,
       default: "ROLE_MEMBER",
-      enum: ["ROLE_MEMBER", "ROLE_ADMIN", "ROLE_SELLER"],
+      enum: ["ROLE_MEMBER", "ROLE_ADMIN"],
     },
   },
   { timestamps: true }

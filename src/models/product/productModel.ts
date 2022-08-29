@@ -13,12 +13,11 @@ const ProductSchema = new mongoose.Schema(
   {
     name: { type: String, required: true },
     slug: { type: String, slug: "name", unique: true },
-    image: { type: Array, required: true },
-    price: { type: Number, required: true },
-    sold: { type: Number, required: true, default: 0 },
-    inStock: { type: Boolean, required: true, default: false },
-    discount: { type: Number },
+    image: { type: String, required: true },
     desc: { type: String },
+    price: { type: Number, required: true },
+    rate: { type: Number, required: true },
+    country: { type: String, required: true },
     category: {
       type: mongoose.Schema.Types.ObjectId,
       required: true,
@@ -29,18 +28,13 @@ const ProductSchema = new mongoose.Schema(
       required: true,
       ref: "ProductType",
     },
-    brand: {
-      type: mongoose.Schema.Types.ObjectId,
-      required: true,
-      ref: "Brand",
-    },
     numReviews: {
       type: Number,
       default: 0,
     },
-    size: { type: Array },
-    colour: { type: Array },
-    type: { type: Array },
+    // size: { type: Array },
+    // colour: { type: Array },
+    // type: { type: Array },
   },
   { timestamps: true }
 );

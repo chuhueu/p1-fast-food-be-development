@@ -77,6 +77,7 @@ const getProductsByFilter = asyncHandler(
   async (req: Request, res: Response) => {
     try {
       let category = req.query.category || "";
+
       let type = req.query.type || "";
       let rating = Number(req.query.rating) || 0;
       let min =
@@ -92,6 +93,7 @@ const getProductsByFilter = asyncHandler(
 
       const pageSize = 16;
       const categoryFilter = category ? { category } : {};
+
       const typeFilter = type ? { type } : {};
       const priceFilter = min && max ? { price: { $gte: min, $lte: max } } : {};
       const ratingFilter = rating

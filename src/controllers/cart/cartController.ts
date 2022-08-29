@@ -20,6 +20,7 @@ const createCart = asyncHandler(async (req: Request, res: Response) => {
     const sendCart = await newCart.save();
     res.status(200).json(sendCart);
   } catch (error) {
+    console.log(error);
     res.status(500).json(error);
   }
 });
@@ -82,16 +83,14 @@ const getCartItemById = asyncHandler(async (req: Request, res: Response) => {
 //@router  POST /api/cart/add/:id
 //@access  User
 const addToCart = asyncHandler(async (req: Request, res: Response) => {
-  const { product, brand, name, image, price, discount, quantity } = req.body;
+  const { product, name, image, price, quantity } = req.body;
 
   const newItemCart = new CartItem({
     cart: req.params.id,
     product,
-    brand,
     name,
     image,
     price,
-    discount,
     quantity,
   });
 

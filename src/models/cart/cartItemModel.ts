@@ -12,15 +12,15 @@ const CartItemsSchema = new mongoose.Schema(
       required: true,
       ref: "Product",
     },
-    brand: {
-      type: mongoose.Schema.Types.ObjectId,
-      required: true,
-      ref: "Brand",
-    },
+    // brand: {
+    //   type: mongoose.Schema.Types.ObjectId,
+    //   required: true,
+    //   ref: "Brand",
+    // },
     name: { type: String, required: true },
     image: { type: String, required: true },
     price: { type: Number, required: true },
-    discount: { type: Number },
+    //discount: { type: Number },
     quantity: { type: Number, required: true, default: 1 },
   },
   { timestamps: true }

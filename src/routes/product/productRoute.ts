@@ -28,9 +28,9 @@ router.route("/search/:name").get(searchProductByName);
 router
   .route("/:id")
   .get(getProductById)
-  .delete(verify, checkSeller, deleteProduct);
+  .delete(verify, checkAdmin, deleteProduct);
 
 //CREATE AND GET
-router.route("/").post(verify, checkSeller, createProduct).get(getProduct);
+router.route("/").post(verify, checkUser, createProduct).get(getProduct);
 
 module.exports = router;
